@@ -38,6 +38,9 @@ References:
 Geeks of Geeks. 2021. Reading and Writing to text files in Python. [Online]. [Accessed 18 May 2021]. 
 Available from: https://www.geeksforgeeks.org/reading-writing-text-files-python/
 
+Kite. N/A. tkinter. [Online]. [Accessed 14 May 2021]. 
+Available from: https://www.kite.com/python/docs/tkinter
+
 Leeds University. 2020. Programming for Geographical Information Analysis: Core Skills. [Online]. [Accessed 27 April 2021].
 Available at:https://www.geog.leeds.ac.uk/courses/computing/study/core-python/
 
@@ -48,7 +51,10 @@ Python Documentation. 2021. Unit testing framework. [Online]. [Accessed 15 May 2
 Available at: https://docs.python.org/3/library/unittest.html
 
 Ships and Oil. N/A. Icebergs and Anchor Handlers. [Online]. [Accessed 10 May 2021]. 
-Avaliable from: http://www.shipsandoil.com/Features/Towing%20Icebergs.htm 
+Available from: http://www.shipsandoil.com/Features/Towing%20Icebergs.htm 
+
+Stack Overflow. 2019. Update Tkinter Label from Variable. [Online]. [Accessed 14 May 2021]. 
+Available from: https://stackoverflow.com/questions/2603169/update-tkinter-label-from-variable
 
 Wikipedia. 2021. User Documentation. [Online]. [Accessed 17 May April 2021]. 
 Available at:https://computersciencewiki.org/index.php/User_documentation
