@@ -122,12 +122,12 @@ class IcebergCalc():
         
     def determine_drag(self):
         """
-        This function determines whether the iceberg is within range to be towed by the company. 
+        This function determines whether the iceberg is within size range to be towed by the company. 
 
         Returns
         -------
-        None.
-
+        String .
+            If the iceberg within size range to be towed by the company. 
         """
         global within_range
         global outside_range

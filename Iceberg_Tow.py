@@ -56,21 +56,21 @@ total_mass = iceberg.total_mass() # Total mass of the iceberg
 determine_drag = iceberg.determine_drag() # If the iceerg can be towed or not 
 
 # Display the total volume, total mass and if the iceberg can towed as a GUI
-window = tk.Tk()
-window.wm_title("White Star Line")
-title = tk.Label(window, text="White Star Line Iceberg Towing", fg='white', bg='blue')
-intro = tk.Label(window, text='Calculate the mass of an iceberg and determine if it can be tugged', fg='white', bg='blue')
-iceberg_volume = tk.IntVar()
-iceberg_volume.set(total_volume)
-iceberg_mass = tk.IntVar()
-iceberg_mass.set(total_mass)
-drag = tk.StringVar()
-drag.set(determine_drag)
-volume_text = tk.Label(window, text='The volume of the iceberg is', fg='white', bg='blue')
-volume_num = tk.Label(window, text = iceberg_volume.get(), fg='white', bg='blue')
-mass_text = tk.Label(window, text='The mass of the iceberg is', fg='white', bg='blue')
-mass_num = tk.Label(window, text = iceberg_mass.get(), fg='white', bg='blue')
-drag_text = tk.Label(window, text = drag.get(), fg='white', bg='blue')
+window = tk.Tk() # Create window
+window.wm_title("White Star Line") # Title
+title = tk.Label(window, text="White Star Line Iceberg Towing", fg='white', bg='blue') # Window header title 
+intro = tk.Label(window, text='Calculate the mass of an iceberg and determine if it can be tugged', fg='white', bg='blue') # Window title 
+iceberg_volume = tk.IntVar() # Define variable as a integer value holder
+iceberg_volume.set(total_volume) # Set the variable with the total volume value
+iceberg_mass = tk.IntVar() # Define variable as a integer value holder
+iceberg_mass.set(total_mass) # Set the variable with the total area value 
+drag = tk.StringVar() # Define variable as a string value holder
+drag.set(determine_drag)  # Set the value with the return of the determine drag function 
+volume_text = tk.Label(window, text='The volume of the iceberg is', fg='white', bg='blue') # Display the total volume
+volume_num = tk.Label(window, text = iceberg_volume.get(), fg='white', bg='blue') # Display the total volume
+mass_text = tk.Label(window, text='The mass of the iceberg is', fg='white', bg='blue') # Display the total mass
+mass_num = tk.Label(window, text = iceberg_mass.get(), fg='white', bg='blue') # Display the total mass
+drag_text = tk.Label(window, text = drag.get(), fg='white', bg='blue') # Display if the iceberg can be towed
 title.pack()
 intro.pack()
 volume_text.pack()
@@ -81,10 +81,10 @@ drag_text.pack()
 
 #Create text file of the final iceberg data 
 with open('icebergdata.txt', 'w') as tf: # tf creates a new empty text file 
-    tf.write("The White Line shipping company. For this section of sea:\n")
-    tf.write("The total volume of the iceberg is " + str(total_volume) + "\n")
-    tf.write("The total mass of the iceberg is " + str(total_mass) + "\n")
-    tf.write(determine_drag)
+    tf.write("The White Line shipping company. For this section of sea:\n") 
+    tf.write("The total volume of the iceberg is " + str(total_volume) + "\n") # Print the total volume
+    tf.write("The total mass of the iceberg is " + str(total_mass) + "\n") # Print the total area 
+    tf.write(determine_drag) # Print if the iceberg can be towed or not 
 
 window.mainloop()
 
