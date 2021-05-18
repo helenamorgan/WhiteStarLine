@@ -28,8 +28,28 @@ The extra functionality was attempted, however, I did not understand how add in 
 for each icebergs. 
 
 Testing of the code:
+The unittest of the code is in the script iceberg_test.py. This unittest tests the find_mass function. 
+The test uses a small two row data list to imitate the text file data once it has been read into the source code. 
+This function has been chosen to test as it is deemed the most important function in the source code, as the main purpose of the code is to 
+determine the total mass of an iceberg. 
 
 
-References: 
+References:
+Geeks of Geeks. 2021. Reading and Writing to text files in Python. [Online]. [Accessed 18 May 2021]. 
+Available from: https://www.geeksforgeeks.org/reading-writing-text-files-python/
+
+Leeds University. 2020. Programming for Geographical Information Analysis: Core Skills. [Online]. [Accessed 27 April 2021].
+Available at:https://www.geog.leeds.ac.uk/courses/computing/study/core-python/
+
+Python Documentation. 2021. Graphical User Interfaces with Tk. [Online]. [Accessed 9 May 2021]. 
+Available from: https://docs.python.org/3/library/tk.html
+
+Python Documentation. 2021. Unit testing framework. [Online]. [Accessed 15 May 2021]. 
+Available at: https://docs.python.org/3/library/unittest.html
+
 Ships and Oil. N/A. Icebergs and Anchor Handlers. [Online]. [Accessed 10 May 2021]. 
 Avaliable from: http://www.shipsandoil.com/Features/Towing%20Icebergs.htm 
+
+Wikipedia. 2021. User Documentation. [Online]. [Accessed 17 May April 2021]. 
+Available at:https://computersciencewiki.org/index.php/User_documentation
+

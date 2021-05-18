@@ -1,93 +1,31 @@
-# -*- coding: utf-8 -*-
+## -*- coding: utf-8 -*-
 """
 Created on Mon May 17 17:58:36 2021
 
 @author: helena
 """
 
-# -*- coding: utf-8 -*-
 """
-Created on Fri Apr 23 11:30:49 2021
-
-@author: helena
+Unit testing framework to ensure the model is correctly 
+calculating mass of the iceberg 
 """
-# Import libraries
-import csv
-import matplotlib.pyplot
-import tkinter as tk
-import IcebergCalculations2
 
-# Pull in two data files and display them 
-# Open the lidardata file and read in the data
-f = open('white1.lidar.txt')
-reader = csv.reader(f, quoting = csv.QUOTE_NONNUMERIC)
-lidardata = [] # Create an empty list to read in the data
-for row in reader:
-    rowlist = [] # Create an empty list for the rows of data 
-    for value in row:
-        rowlist.append(value) # Append the values into rows 
-    lidardata.append(rowlist) # Append the rows into the list 
-f.close()
+# Import test module and the source code that will be checked 
+import unittest
+import IcebergCalculations
 
-# Open the radardata file and read in the data 
-g = open('white1.radar.txt')
-reader2 = csv.reader(g, quoting = csv.QUOTE_NONNUMERIC)
-radardata = [] # Create an empty list to read in the data
-for row in reader2:
-    rowlist2 = [] # Create an empty list for the rows of data 
-    for value in row:
-        rowlist2.append(value) # Append the values into rows 
-    radardata.append(rowlist2) # Append the rows into the list
-f.close()
 
-# Display the two data files 
-plot1 = matplotlib.pyplot.figure(1)
-matplotlib.pyplot.imshow(radardata)
-plot2 = matplotlib.pyplot.figure(2)
-matplotlib.pyplot.imshow(lidardata)
-matplotlib.pyplot.show()
-
-# Calculate the area, volume and mass of the iceberg 
-seaice_m = [] # Create an empty list for the ice values 
-iceberg = IcebergCalculations2.IcebergCalc(lidardata, radardata, seaice_m) # Open the IcebergCalc class
-# Assess which areas of the image are ice using the radar data 
-iceberg.find_ice(radardata, seaice_m)
-# Calculate the total mass of the Iceberg 
-iceberg.find_mass(lidardata)
-# Determine if the Iceberg can be towed
-iceberg.determine_drag()
-
-# Gather the volume, mass and whether the iceberg can be towed 
-total_volume = iceberg.total_volume() # Total volume of the iceberg 
-total_mass = iceberg.total_mass() # Total mass of the iceberg 
-determine_drag = iceberg.determine_drag() # If the iceerg can be towed or not 
-
-# Display the total volume, total mass and if the iceberg can towed as a GUI
-window = tk.Tk()
-window.wm_title("White Star Line")
-title = tk.Label(text="White Star Line Iceberg Towing", fg='white', bg='blue')
-intro = tk.Label(text='Calculate the mass of an iceberg and determine if it can be tugged', fg='white', bg='blue')
-iceberg_volume = tk.IntVar()
-iceberg_volume.set(total_volume)
-iceberg_mass = tk.IntVar()
-iceberg_mass.set(total_mass)
-drag = tk.StringVar()
-drag.set(determine_drag)
-volume_text = tk.Label(text='The volume of the iceberg is', fg='white', bg='blue')
-volume_num = tk.Label(text = iceberg_volume.get())
-mass_text = tk.Label(text='The mass of the iceberg is', fg='white', bg='blue')
-mass_num = tk.Label(text = iceberg_mass.get())
-drag_text = tk.Label(text = drag.get())
-title.pack()
-intro.pack()
-volume_text.pack()
-volume_num.pack()
-mass_text.pack()
-mass_num.pack()
-drag_text.pack()
-
-#Create text file of the final iceberg data 
-with open('icebergdata.txt', 'w', newline='') as tf: # tf creates a new empty text file 
-    tf.write(str(total_volume))
-
-window.mainloop()
+class TestAgent(unittest.TestCase): # Identifies this class is to be tested 
+        
+    def test_find_mass(self):
+        lidardata = ([0.0, 0.0, 0.0, 10, 100, 130, 200, 225, 178, 0.0, 0.0, 0.0],[0.0, 0.0, 0.0, 10, 100, 130, 200, 225, 178, 0.0, 0.0, 0.0])
+        radardata = [0.0, 0.0, 0.0, 1, 110, 133, 230, 220, 178, 0.0, 0.0, 0.0]
+        seaice_m = []
+        a = IcebergCalculations.IcebergCalc(lidardata, radardata, seaice_m)
+        m = a.find_mass(lidardata)
+        print("Check - The total mass of the iceberg is " + str(m))
+        self.assertEqual(m, 1527722, "the mass of the iceberg should be 1527722")
+        
+        
+if __name__ == '__main__': # the class runs within framework within the unittest library 
+    unittest.main()

@@ -75,8 +75,8 @@ class IcebergCalc():
 
         Returns
         -------
-        None.
-
+        Integer.
+            The total mass of the iceberg. 
         """
         global total_volume
         global total_mass
@@ -94,7 +94,7 @@ class IcebergCalc():
         print("volume of iceberg is" + " " + str(total_volume))
         print("the mass of the iceberg is" + " " + str(iceberg_mass))
         print("the total mass of the iceberg is" + " " + str(total_mass))
-        return(total_mass, total_volume)
+        return(total_mass)
     
     def total_volume(self):
         """

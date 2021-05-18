@@ -8,7 +8,7 @@ Created on Fri Apr 23 11:30:49 2021
 import csv
 import matplotlib.pyplot
 import tkinter as tk
-import IcebergCalculations2
+import IcebergCalculations
 
 # Pull in two data files and display them 
 # Open the lidardata file and read in the data
@@ -42,7 +42,7 @@ matplotlib.pyplot.show()
 
 # Calculate the area, volume and mass of the iceberg 
 seaice_m = [] # Create an empty list for the ice values 
-iceberg = IcebergCalculations2.IcebergCalc(lidardata, radardata, seaice_m) # Open the IcebergCalc class
+iceberg = IcebergCalculations.IcebergCalc(lidardata, radardata, seaice_m) # Open the IcebergCalc class
 # Assess which areas of the image are ice using the radar data 
 iceberg.find_ice(radardata, seaice_m)
 # Calculate the total mass of the Iceberg 
@@ -67,10 +67,10 @@ iceberg_mass.set(total_mass)
 drag = tk.StringVar()
 drag.set(determine_drag)
 volume_text = tk.Label(window, text='The volume of the iceberg is', fg='white', bg='blue')
-volume_num = tk.Label(window, text = iceberg_volume.get())
+volume_num = tk.Label(window, text = iceberg_volume.get(), fg='white', bg='blue')
 mass_text = tk.Label(window, text='The mass of the iceberg is', fg='white', bg='blue')
-mass_num = tk.Label(window, text = iceberg_mass.get())
-drag_text = tk.Label(window, text = drag.get())
+mass_num = tk.Label(window, text = iceberg_mass.get(), fg='white', bg='blue')
+drag_text = tk.Label(window, text = drag.get(), fg='white', bg='blue')
 title.pack()
 intro.pack()
 volume_text.pack()
@@ -80,10 +80,10 @@ mass_num.pack()
 drag_text.pack()
 
 #Create text file of the final iceberg data 
-with open('icebergdata.txt', 'w', newline='') as tf: # tf creates a new empty text file 
-    tf.write("The White Line shipping company. For this section of sea: '')
-    tf.write("The total volume of the iceberg is " + str(total_volume) + '')
-    tf.write("The total mass of the iceberg is " + str(total_mass) + '')
+with open('icebergdata.txt', 'w') as tf: # tf creates a new empty text file 
+    tf.write("The White Line shipping company. For this section of sea:\n")
+    tf.write("The total volume of the iceberg is " + str(total_volume) + "\n")
+    tf.write("The total mass of the iceberg is " + str(total_mass) + "\n")
     tf.write(determine_drag)
 
 window.mainloop()
