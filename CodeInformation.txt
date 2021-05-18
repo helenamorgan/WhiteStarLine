@@ -1,0 +1,35 @@
+Documentation of development: 
+
+There is only one version of the code to be assessed. 
+
+Intention of the software: 
+The intention of the software is to analyse text files of lidar and radar data to determine the total size of an iceberg and whether the iceberg is within the 
+range of being able to be towed out of the way by the tug boat. This software aims to increase the safety of the White Line shipping company by reducing the 
+potential for collisions with icebergs by either towing them out of the ships course or informing the captain of this ship to adjust their course. 
+
+Development of software: 
+The software was developed through developing an algorithm of what the subsequent code needed to achieve. The files were then initially read into then code and 
+examined. The seperate class file with the functions for calculating the area, volume and mass were then developed through understanding that the area 
+of the iceberg needed to be attained for through analysing each row of the data file. Once the functions were produced, this class was the utilised in the 
+main source code, with the GUI then produced. The GUI is simple and aimed to be exceptionally easy to understand the key figures calculated by the code. 
+
+Issues during development:
+An issue with the software during the development occurred when using the variables produced within the class functions in the main source code. 
+This issue was overcome by going through the course notes and realising that the scope of these variables needed to be changed to global instead of 
+local, allowing them to be used outside of the function. 
+Another issue with the code was that the determine_drag function initially had no return element, instead the if else statment just printed the if the 
+boat could be towed or not. This was an issue when trying to print this the resulting statement in the GUI, as the statement had no return and produced 
+"None", instead of printing if the iceberg could be dragged or not. This issue was sorted by introduing global string variables to be returned instead, 
+allowing these to then be used within the GUI. 
+
+Issues with the code: 
+There are no issues with the code. The code runs as intended. 
+The extra functionality was attempted, however, I did not understand how add in code that allowed for distinguishing the seperate areas and volumes
+for each icebergs. 
+
+Testing of the code:
+
+
+References: 
+Ships and Oil. N/A. Icebergs and Anchor Handlers. [Online]. [Accessed 10 May 2021]. 
+Avaliable from: http://www.shipsandoil.com/Features/Towing%20Icebergs.htm 
