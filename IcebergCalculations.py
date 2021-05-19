@@ -32,9 +32,9 @@ class IcebergCalc():
         """
         self.lidardata = lidardata
         self.radardata = radardata
-        self.seaice_m = seaice_m
+        self.seaice_m = []
     
-    def find_ice(self, radardata, seaice_m=None):
+    def find_ice(self, radardata, seaice_m):
         """
         This function finds if there is ice within this section of the sea. 
         Ice has radar data values of over 100, so this function finds those values over 100 and prints these values. 
@@ -43,7 +43,7 @@ class IcebergCalc():
         ----------
         radardata : list of integers
             List of the radar data 
-        seaice_m : list, optional
+        seaice_m : list
             Empty list for the ice variables to be appended. The default is None.
 
         Returns
@@ -62,9 +62,10 @@ class IcebergCalc():
         """
         This function calculates the area, volume and mass of the ice. 
         The lidar data is in cm. 
-        The area of the icberg is calculated then multiplied by the by the height which is 10 to calculate the volume. 
+        The area of the icberg is calculated then multiplied by the by the height to calculate the volume. 
         The volume is multiplied by the density of ice to calculate the mass of the iceberg. 
-        The total volume of the mass of the iceberg is calculated by multiplying by 10 to calculate 100% of the iceberg mass. 
+        The density of ice is a set value. 
+        The total volume of the mass of the iceberg is calculated by multiplying by 10 (as only 10% of the iceberg is currently above the water line) to calculate 100% of the iceberg mass. 
         These variables are printed. 
         
 
@@ -85,15 +86,15 @@ class IcebergCalc():
         for row in lidardata:
             for i in row:
                 if i >= 100.0:
-                    total_pixels += 1
-                    total_volume += i*0.1 # 0.1 = 10cm 
+                    total_pixels += 1 # Area of the iceberg
+                    total_volume += i*0.1 # Convert cm to m as 0.1 = 10cm 
         # Density of ice = 917km/m^3
         iceberg_mass = total_volume * 917
         total_mass = iceberg_mass * 10
-        print("area of iceberg is" + " " + str(total_pixels))
-        print("volume of iceberg is" + " " + str(total_volume))
-        print("the mass of the iceberg is" + " " + str(iceberg_mass))
-        print("the total mass of the iceberg is" + " " + str(total_mass))
+        print("The area of iceberg is" + " " + str(total_pixels))
+        print("The volume of iceberg is" + " " + str(total_volume))
+        print("The mass of the iceberg is" + " " + str(iceberg_mass))
+        print("The total mass of the iceberg is" + " " + str(total_mass))
         return(total_mass)
     
     def total_volume(self):
@@ -122,12 +123,12 @@ class IcebergCalc():
         
     def determine_drag(self):
         """
-        This function determines whether the iceberg is within size range to be towed by the company. 
+        This function determines whether the iceberg is within size range to be towed by the company tug boat. 
 
         Returns
         -------
         String .
-            If the iceberg within size range to be towed by the company. 
+            If the iceberg is within size range to be towed by the company. 
         """
         global within_range
         global outside_range

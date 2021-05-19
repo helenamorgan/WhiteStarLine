@@ -2,6 +2,8 @@ Documentation of development:
 
 There is only one version of the code to be assessed. 
 
+License agreement: MIT (LICENSE document automatically created by Github).
+
 Intention of the software: 
 The intention of the software is to analyse text files of lidar and radar data to determine the total size of an iceberg and whether the iceberg is within the 
 range of being able to be towed out of the way by the tug boat. This software aims to increase the safety of the White Line shipping company by reducing the 
@@ -12,6 +14,7 @@ The software was developed through developing an algorithm of what the subsequen
 examined. The seperate class file with the functions for calculating the area, volume and mass were then developed through understanding that the area 
 of the iceberg needed to be attained for through analysing each row of the data file. Once the functions were produced, this class was the utilised in the 
 main source code, with the GUI then produced. The GUI is simple and aimed to be exceptionally easy to understand the key figures calculated by the code. 
+This code works as intended. 
 
 Issues during development:
 An issue with the software during the development occurred when using the variables produced within the class functions in the main source code. 
@@ -24,8 +27,8 @@ allowing these to then be used within the GUI.
 
 Issues with the code: 
 There are no issues with the code. The code runs as intended. 
-The extra functionality was attempted, however, I did not understand how add in code that allowed for distinguishing the seperate areas and volumes
-for each icebergs. 
+The extra functionality was attempted, however, I did not understand how to add in code that allowed for distinguishing the seperate areas and volumes
+for each icebergs and therefore, was not included in this version of code as the development was very limited. 
 
 Testing of the code:
 The unittest of the code is in the script iceberg_test.py. This unittest tests the find_mass function. 
@@ -43,6 +46,9 @@ Available from: https://www.kite.com/python/docs/tkinter
 
 Leeds University. 2020. Programming for Geographical Information Analysis: Core Skills. [Online]. [Accessed 27 April 2021].
 Available at:https://www.geog.leeds.ac.uk/courses/computing/study/core-python/
+
+Matplotlib. 2021. Colourmap Reference. [Online]. [Accessed 19 May 2021]. 
+Available from: https://matplotlib.org/stable/tutorials/colors/colormaps.html
 
 Python Documentation. 2021. Graphical User Interfaces with Tk. [Online]. [Accessed 9 May 2021]. 
 Available from: https://docs.python.org/3/library/tk.html
