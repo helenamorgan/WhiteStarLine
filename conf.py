@@ -12,14 +12,14 @@
 #
 import os
 import sys
- 
-sys.path.append('C:\GEOG5990\assessment 2\WhiteStarLine')
+sys.path.append('C:\GEOG5990\WhiteStarLineFinal')
+
 
 # -- Project information -----------------------------------------------------
 
-project = 'White Star Line (Assessment 2)'
-copyright = '2021, StudentH'
-author = 'StudentH'
+project = 'Whitestarline'
+copyright = '2021, helena'
+author = 'helena'
 
 # The full version, including alpha/beta/rc tags
 release = '1'
