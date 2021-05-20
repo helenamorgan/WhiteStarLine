@@ -91,10 +91,10 @@ class IcebergCalc():
         # Density of ice = 917km/m^3
         iceberg_mass = total_volume * 917
         total_mass = iceberg_mass * 10
-        print("The area of iceberg is" + " " + str(total_pixels))
-        print("The volume of iceberg is" + " " + str(total_volume))
-        print("The mass of the iceberg is" + " " + str(iceberg_mass))
-        print("The total mass of the iceberg is" + " " + str(total_mass))
+        print("The area of iceberg is" + " " + str(total_pixels) + " m^2")
+        print("The volume of iceberg is" + " " + str(total_volume) + " m^3")
+        print("The mass of the iceberg is" + " " + str(iceberg_mass) + " kg/m^3")
+        print("The total mass of the iceberg is" + " " + str(total_mass) + " kg/m^3")
         return(total_mass)
     
     def total_volume(self):
@@ -124,6 +124,7 @@ class IcebergCalc():
     def determine_drag(self):
         """
         This function determines whether the iceberg is within size range to be towed by the company tug boat. 
+        If the iceberg is larger than 36 million kg in mass, it cannot be towed by the tug boat. 
 
         Returns
         -------

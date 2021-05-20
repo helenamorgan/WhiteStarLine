@@ -35,10 +35,10 @@ f.close()
 
 # Display the two data files 
 plot1 = matplotlib.pyplot.figure(1) # Figure 1 is the radardata
-plot1.suptitle('The Radar Data', fontsize=16) # Figure title
+plot1.suptitle('The Radar Data', fontsize=14) # Figure title
 matplotlib.pyplot.imshow(radardata, cmap='Blues')
 plot2 = matplotlib.pyplot.figure(2) # Figure 2 is the lidardata 
-plot2.suptitle('The Lidar Data', fontsize=16) # Figure title
+plot2.suptitle('The Lidar Data', fontsize=14) # Figure title
 matplotlib.pyplot.imshow(lidardata, cmap='Blues')
 matplotlib.pyplot.show()
 
@@ -61,8 +61,8 @@ determine_drag = iceberg.determine_drag() # If the iceberg can be towed or not
 window = tk.Tk() # Create window
 window.wm_title("White Star Line") # Set window title
 window.geometry("500x200") # Set window size 
-window.option_add('*Font', '20') # Set font size 
-window.configure(bg='blue')
+window.option_add('*Font', '25') # Set font size 
+window.configure(bg='blue') # Set background colour
 title = tk.Label(window, text="White Star Line Iceberg Towing", fg='white', bg='blue') # Window header title 
 intro = tk.Label(window, text='Calculate the mass of an iceberg and determine if it can be tugged', fg='white', bg='blue') # Window title 
 iceberg_volume = tk.IntVar() # Define variable as a integer value holder
